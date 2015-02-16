@@ -1,3 +1,6 @@
+package tax;
+
+import static java.math.BigDecimal.ROUND_HALF_UP;
 import static java.math.BigDecimal.ROUND_UP;
 import static java.math.BigDecimal.ZERO;
 
@@ -24,7 +27,8 @@ public class TaxCalculator {
     }
 
     private BigDecimal roundToFiveCents(BigDecimal value) {
-        return value.multiply(new BigDecimal(20)).setScale(0, ROUND_UP).divide(new BigDecimal(20));
+        final BigDecimal noRiffRaff = value.setScale(3, ROUND_HALF_UP);
+        return noRiffRaff.multiply(new BigDecimal(20)).setScale(0, ROUND_UP).divide(new BigDecimal(20));
     }
 
     private BigDecimal calculateSalesTax(Item item) {

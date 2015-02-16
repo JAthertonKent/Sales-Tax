@@ -1,3 +1,5 @@
+package tax;
+
 import java.math.BigDecimal;
 
 public class Item {
@@ -26,5 +28,14 @@ public class Item {
 
     public BigDecimal priceForQuantity() {
         return amount.multiply(new BigDecimal(quantity));
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+            "amount=" + amount +
+            ", quantity=" + quantity +
+            ", description='" + description + '\'' +
+            '}';
     }
 }

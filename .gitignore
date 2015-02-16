@@ -2,3 +2,5 @@
 out
 .idea
 SalesTax.iml
+test-feature/gauge_bin/
+test-feature/logs/
